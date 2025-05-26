@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-   "homepage": "https://sanskriti86.github.io/mega-ai-art-flow-54/",
+  "homepage": "https://sanskriti86.github.io/mega-ai-art-flow-54/",
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",

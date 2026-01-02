@@ -57,7 +57,7 @@ const CTASection = () => {
               </Button>
             </a>
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919977827050"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -70,6 +70,19 @@ const CTASection = () => {
               </Button>
             </a>
           </div>
+
+          {/* WhatsApp Contact Info */}
+          <p className="text-foreground-secondary text-sm">
+            Or directly message us on WhatsApp:{" "}
+            <a
+              href="https://wa.me/919977827050"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 font-semibold transition-colors"
+            >
+              +91 9977827050
+            </a>
+          </p>
 
           {/* Trust Badge */}
           <motion.div

@@ -1,77 +1,120 @@
-
-import { Bot, Mail, MessageCircle, Share2, Workflow, Zap, Globe, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
+import { 
+  Bot, 
+  MessageSquare, 
+  Users, 
+  Workflow, 
+  Cpu, 
+  Link2,
+  ArrowUpRight
+} from "lucide-react";
 
 const services = [
   {
     icon: Bot,
-    title: "AI Voice Bots",
-    description: "Natural conversations powered by advanced AI technology.",
-    bgColor: "bg-purple-100",
-    iconColor: "text-purple-600",
-    hoverColor: "hover:bg-purple-200"
+    title: "AI Automation Systems",
+    description: "End-to-end automation that handles complex workflows, from data processing to decision-making.",
   },
   {
-    icon: MessageCircle,
-    title: "Chatbots",
-    description: "24/7 customer support with intelligent chat automation.",
-    bgColor: "bg-blue-100",
-    iconColor: "text-blue-600",
-    hoverColor: "hover:bg-blue-200"
+    icon: MessageSquare,
+    title: "WhatsApp AI & CRM",
+    description: "Intelligent conversational AI that engages customers 24/7 and syncs with your CRM.",
   },
   {
-    icon: Share2,
-    title: "X Automation",
-    description: "Streamline your Twitter presence with smart automation tools.",
-    bgColor: "bg-pink-100",
-    iconColor: "text-pink-600",
-    hoverColor: "hover:bg-pink-200"
-  },
-  {
-    icon: Mail,
-    title: "Email Automation",
-    description: "Personalized email campaigns that drive engagement.",
-    bgColor: "bg-green-100",
-    iconColor: "text-green-600",
-    hoverColor: "hover:bg-green-200"
+    icon: Users,
+    title: "Lead Capture & Follow-ups",
+    description: "Automated lead qualification and nurturing sequences that convert prospects to customers.",
   },
   {
     icon: Workflow,
-    title: "Workflow Automation",
-    description: "Optimize your business processes with AI-driven workflows.",
-    bgColor: "bg-orange-100",
-    iconColor: "text-orange-600",
-    hoverColor: "hover:bg-orange-200"
+    title: "Internal Ops Automation",
+    description: "Streamline internal processes, reduce manual work, and eliminate human error.",
   },
   {
-    icon: Rocket,
-    title: "Strategic AI",
-    description: "Advanced AI solutions for strategic business growth.",
-    bgColor: "bg-indigo-100",
-    iconColor: "text-indigo-600",
-    hoverColor: "hover:bg-indigo-200"
-  }
+    icon: Cpu,
+    title: "Custom AI Agents",
+    description: "Purpose-built AI agents that handle specific tasks and learn from your business context.",
+  },
+  {
+    icon: Link2,
+    title: "API & Tool Integrations",
+    description: "Seamlessly connect your existing tools and create unified automation ecosystems.",
+  },
 ];
 
 const ServicesSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50">
+    <section id="services" className="py-24 px-4 bg-background-secondary section-glow">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="text-primary font-mono text-sm tracking-wider uppercase">What We Do</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-4 text-foreground">
+            Automation That <span className="gradient-text">Actually Works</span>
+          </h2>
+          <p className="text-foreground-secondary mt-4 max-w-2xl mx-auto text-lg">
+            We don't sell templates. We build custom AI systems tailored to your specific business needs.
+          </p>
+        </motion.div>
+
+        {/* Services Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.title}
-              className={`p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in ${service.hoverColor}`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              variants={cardVariants}
+              className="group glass-card-hover p-8 cursor-pointer"
             >
-              <div className={`w-16 h-16 ${service.bgColor} rounded-lg flex items-center justify-center mb-4 animate-pulse`}>
-                <service.icon className={`w-8 h-8 ${service.iconColor}`} />
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                <service.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-display font-semibold text-foreground mb-3 flex items-center gap-2">
+                {service.title}
+                <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-primary" />
+              </h3>
+              <p className="text-foreground-secondary leading-relaxed">
+                {service.description}
+              </p>
+
+              {/* Hover Border Glow */}
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <div className="absolute inset-0 rounded-xl border border-primary/30" />
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

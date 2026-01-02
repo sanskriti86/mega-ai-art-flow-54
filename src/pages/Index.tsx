@@ -1,77 +1,39 @@
-
-import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
-import MissionSection from "@/components/MissionSection";
-import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
-import TestimonialSection from "@/components/TestimonialSection";
-import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { PhoneCall } from "lucide-react";
+import ProcessSection from "@/components/ProcessSection";
+import UseCasesSection from "@/components/UseCasesSection";
+import WhyMegaAISection from "@/components/WhyMegaAISection";
+import CTASection from "@/components/CTASection";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
-  const isMobile = useIsMobile();
-  
-  // Ensure smooth scrolling behavior
-  useEffect(() => {
-    // Fix for mobile browsers that don't support smooth scrolling
-    const handleLinkClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-        e.preventDefault();
-        const id = target.getAttribute('href')?.substring(1);
-        if (id) {
-          const element = document.getElementById(id);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      }
-    };
-
-    document.addEventListener('click', handleLinkClick);
-    return () => document.removeEventListener('click', handleLinkClick);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
-      <HeroSection />
-      <div id="services" className="w-full pt-16">
-        <ServicesSection />
-      </div>
-      <div id="testimonials" className="w-full pt-16">
-        <TestimonialSection />
-      </div>
-      <div id="mission" className="w-full pt-16">
-        <MissionSection />
-      </div>
-      <div id="about" className="w-full pt-16">
-        <AboutSection />
-      </div>
-      <div id="contact" className="w-full pt-16">
-        <ContactSection />
-      </div>
+      <main>
+        <HeroSection />
+        <div id="services"><ServicesSection /></div>
+        <div id="process"><ProcessSection /></div>
+        <div id="solutions"><UseCasesSection /></div>
+        <div id="about"><WhyMegaAISection /></div>
+        <div id="contact"><CTASection /></div>
+      </main>
       
-      {/* Mobile Book Call button - positioned at the bottom of the page instead of fixed to viewport */}
-      {isMobile && (
-        <div className="fixed bottom-6 right-6 z-40">
-          <a 
-            href="https://calendly.com/sankalpgour2" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Button 
-              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-full font-semibold shadow-lg hover:shadow-purple-500/20 transition-all flex items-center gap-2"
-            >
-              <PhoneCall className="w-5 h-5 animate-pulse" />
-              Book a Call
-            </Button>
-          </a>
+      {/* Footer */}
+      <footer className="py-12 px-4 border-t border-border/50 bg-background-secondary">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <img src="/lovable-uploads/73b16301-5862-4c9a-81e3-5086231b3af6.png" alt="MegaAI" className="w-8 h-8" />
+            <span className="font-display font-bold text-foreground">Mega<span className="text-primary">AI</span></span>
+          </div>
+          <p className="text-foreground-muted text-sm">
+            © {new Date().getFullYear()} MegaAI. All rights reserved.
+          </p>
         </div>
-      )}
+      </footer>
+      
+      <WhatsAppButton />
     </div>
   );
 };

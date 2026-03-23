@@ -4,10 +4,9 @@ import ServicesSection from "@/components/ServicesSection";
 import ProcessSection from "@/components/ProcessSection";
 import UseCasesSection from "@/components/UseCasesSection";
 import WhyMegaAISection from "@/components/WhyMegaAISection";
-<<<<<<< HEAD
+
 import TestimonialSection from "@/components/TestimonialSection";
-=======
->>>>>>> afe98714836dd8b5e19b416605c5288f884cc4b7
+
 import CTASection from "@/components/CTASection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -21,10 +20,7 @@ const Index = () => {
         <div id="process"><ProcessSection /></div>
         <div id="solutions"><UseCasesSection /></div>
         <div id="about"><WhyMegaAISection /></div>
-<<<<<<< HEAD
         <div id="testimonial"><TestimonialSection /></div>
-=======
->>>>>>> afe98714836dd8b5e19b416605c5288f884cc4b7
         <div id="contact"><CTASection /></div>
       </main>
       

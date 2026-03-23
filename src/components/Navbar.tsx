@@ -4,7 +4,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navItems = ["Services", "Process", "Solutions", "About", "Contact"];
+const navItems = ["Services", "Process", "Solutions", "About","Testimonial", "Contact"];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

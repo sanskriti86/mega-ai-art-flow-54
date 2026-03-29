@@ -23,12 +23,12 @@ const ContactSection = () => {
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       toast({
         title: "Message sent!",
         description: "We'll get back to you as soon as possible.",
       });
-      
+
       (e.target as HTMLFormElement).reset();
     } catch (error) {
       toast({
@@ -59,6 +59,22 @@ const ContactSection = () => {
                 </svg>
                 <a href="mailto:sankalpgour2@gmail.com" className="text-gray-700 hover:text-purple-600">
                   support@megaai.co.in
+                </a>
+              </div>
+              <div className="flex items-center transform transition-all duration-300 hover:translate-x-2">
+                <svg className="w-6 h-6 text-black mr-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.1 2H20.5L13.9 10.2L22 22H15.6L10.6 15.4L4.9 22H1.5L8.6 13.2L1 2H7.6L12.2 8.1L17.1 2Z" />
+                </svg>
+                <a href="https://x.com/MegaAi_" className="text-gray-700 hover:text-purple-600">
+                  Twitter for Mega Ai
+                </a>
+              </div>
+              <div className="flex items-center transform transition-all duration-300 hover:translate-x-2">
+                <svg className="w-6 h-6 text-pink-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.75a4.75 4.75 0 1 1 0 9.5a4.75 4.75 0 0 1 0-9.5Zm0 1.5a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5Zm4.88-.38a.88.88 0 1 1 0 1.75a.88.88 0 0 1 0-1.75Z" />
+                </svg>
+                <a href="https://www.instagram.com/megaai_.?igsh=MTVzMDUzcDF6N2MxdQ==" className="text-gray-700 hover:text-purple-600">
+                  Instagram for Mega Ai
                 </a>
               </div>
             </div>

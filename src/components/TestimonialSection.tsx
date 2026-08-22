@@ -22,10 +22,22 @@ const TestimonialSection = () => {
             />
           </div>
 
-          {/* Video 2 */}
+          {/* Video 2
           <div className="rounded-2xl overflow-hidden border border-purple-500/20 shadow-lg bg-black">
             <video
               src={import.meta.env.BASE_URL + "videos/testimonial2.mp4"}
+              autoPlay
+              muted
+              loop
+              controls
+              playsInline
+              className="w-full h-auto max-h-[400px] bg-black"
+            />
+          </div> */}
+          {/* Video 3 */}
+          <div className="rounded-2xl overflow-hidden border border-purple-500/20 shadow-lg bg-black">
+            <video
+              src={import.meta.env.BASE_URL + "videos/testimonial3.mp4"}
               autoPlay
               muted
               loop
